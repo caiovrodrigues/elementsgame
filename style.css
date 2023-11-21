@@ -1,0 +1,213 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:  Binggo-Wood;
+}
+
+body{
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Binggo-Wood;
+    src: url('assets/fontes/Binggo\ Wood\ Font.otf');
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.tela{
+    width: 1100px;
+    height: 900px;
+    border: 1px solid black;
+    background-image: linear-gradient(90deg, #a6a6a6, #fff);
+}
+
+.primeira-tela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.primeira-tela img{
+    width: 880px;
+    margin-top: 40px;
+}
+
+.primeira-tela .text-banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-bottom: 2rem;
+    display: none;
+    font-family: Binggo-Wood;
+}
+
+.primeira-tela h1{
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+}
+
+.primeira-tela p{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+
+}
+
+@keyframes logo-animation {
+    25%{
+        transform: scale(1.08);
+    }
+    25.7%{
+        transform: scale(5);
+    }
+    28%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.08);
+    }
+}
+
+/* GAME AREA */
+
+.game-area{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url('assets/images/transferir.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.campo, .side{
+    flex: 1;
+}
+
+.campo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: .7rem;
+    background-color: rgba(0, 0, 0, 0.199);
+    
+}
+
+.campo span{
+    font-size: 4rem;
+}
+
+.status{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    bottom: 0;
+    width: 244px;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    background-color: #ffffff21;
+    backdrop-filter: blur(10px);
+}
+
+.atributos-area{
+    color: white;
+}
+
+.card-battle{
+    width: 250px;
+    height: 100%;
+    border: 3px solid rgb(37, 37, 37);
+}
+
+.card-battle img{
+    width: 100%;
+    height: 316px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.info-area{
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .4rem;
+}
+
+.life-area{
+    flex: 2;
+}
+
+.life-bar{
+    border: 2px solid rgb(51, 51, 51);
+    height: 2.5rem;
+    border-radius: 20px;
+}
+
+.bar{
+    position: relative;
+    background-color: #29a446;
+    height: 100%;
+    border-radius: 20px;
+    transition: .7s ease-out;
+}
+
+.bar p{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: max-content;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.card{
+    width: 190px;
+    height: 240px;
+    background-color: #ccc;
+    border: 5px solid #f34079;
+    cursor: pointer;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.side:has(button){
+    display: flex;
+}
+
+.side button{
+    width: 100%;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    outline: 0;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 999;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.side button:hover{
+    transform: scale(1.05);
+}
+

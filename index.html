@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tela">
+
+            <!-- PRIMEIRA TELA ( INTRO DO GAME ) -->
+            <!-- <div class="primeira-tela">
+                <audio src="assets/áudios/Impact Rise Intro.mp3" id="intro"></audio>
+                <img src="assets/images/logo.png" alt="">
+                <div class="text-banner">
+                    <h1>Elements Game</h1>
+                    <p>CARD GAMES</p>
+                </div>
+            </div> -->
+
+            <!-- TELA DO JOGO -->
+
+            <div class="game-area">
+                <div class="player-area player1">
+                    <div class="info-area">
+                        <div class="side left-side"></div>
+                        <div class="side life-area">
+                            <div class="life-bar">
+                                <div class="bar"><p></p></div>
+                            </div>
+                        </div>
+                        <div class="side right-side"></div>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="assets/images/verso-carta.png" alt="">
+                        </div>
+                        <div class="card">
+                            <img src="assets/images/verso-carta.png" alt="">
+                        </div>
+                        <div class="card">
+                            <img src="assets/images/verso-carta.png" alt="">
+                        </div>
+                        <div class="card">
+                            <img src="assets/images/verso-carta.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="status">
+                        <h2></h2>
+                        <div class="atributos-area">
+                            <div class="attack">Ataque: <t></t> ⚔</div>
+                            <div class="defense">Defesa: <t></t> 🛡</div>
+                            <div class="life">Vida: <t></t> 💓</div>
+                        </div>
+                    </div>
+                    <div class="card-battle card-player1"></div>
+                    <span>❌</span>
+                    <div class="card-battle card-player2">
+                        
+                    </div>
+                </div>
+
+                <div class="player-area player2">
+                    <div class="info-area">
+                        <div class="side left-side">
+                            <button class="button-75" role="button"><span>VER ATRIBUTOS</span></button>
+                        </div>
+                        <div class="side life-area">
+                            <div class="life-bar">
+                                <div class="bar"><p></p></div>
+                            </div>
+                        </div>
+                        <div class="side right-side">
+                            <button id="attackBtn">ATACAR</button>
+                        </div>
+                    </div>
+                    <div class="cards"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="classes.js"></script>
+    <script src="classesPlayer.js"></script>
+    <script src="stage.js"></script>
+</body>
+</html>
