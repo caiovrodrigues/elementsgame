@@ -2,10 +2,11 @@ const tela = document.querySelector('.tela');
 const primeiraParte = document.querySelector('.primeira-tela');
 const gameArea = document.querySelector('.game-area');
 const attackBtn = document.querySelector('#attackBtn');
+const cenarioLuta = document.querySelector('.cenario-luta');
 
 // gameArea.style.display = 'none';
 attackBtn.addEventListener('click', atacar);
-primeiraParte.addEventListener('click', introGame);
+// primeiraParte.addEventListener('click', introGame);
 
 // function introGame(){
     
@@ -26,12 +27,27 @@ primeiraParte.addEventListener('click', introGame);
 function atacar(){
     if(idCardEscolhida != null){
         const carta = player2.deck.findIndex((cardObj) => {
-            return cardObj.id == idCardEscolhida;
+            return cardObj.id == idCardEscolhida; //ENVIAR A CARTA ESCOLHIDA PARA A RENDERIZAÇÃO DA LUTA
         });
         stage.doAttack(player1, player2, player1.deck[carta], player2.deck[0]);
+        mostrarCenarioDaLuta();
+        redenrizarLuta(carta);
         idCardEscolhida = null;
     }
-
+    
     resetBorderDeck();
 }
 
+function mostrarCenarioDaLuta(){
+    cenarioLuta.style.width = '1000px';
+    cenarioLuta.style.height = '750px';
+    cenarioLuta.style.padding = '1rem';
+}
+
+function redenrizarLuta(carta){
+    console.log(carta);
+    // cenarioLuta.querySelector('.p1 .card-luta img').src = `${carta.img_url}`;
+    setTimeout(() => {
+        cenarioLuta.querySelector(".images img").style.display = 'none';
+    }, 2000);
+}

@@ -220,11 +220,13 @@ body{
     left: 50%;
     z-index: 999;
     transform: translateX(-50%) translateY(-50%);
-    width: 1000px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: .7s;
     background-color: rgba(27, 27, 27, 0.17);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 1rem;
 }
 
 .cenario-luta h1{
@@ -288,6 +290,16 @@ body{
 .title-resultado{
     text-align: center;
     font-size: 1.7rem;
+}
+
+.resultado-area .images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 100%;
+    font-size: 3rem;
+    text-align: center;
 }
 
 .resultado-area .images img{

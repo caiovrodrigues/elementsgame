@@ -85,6 +85,7 @@ function resetBorderDeck(){
     document.querySelectorAll('.player2 .cards .card').forEach(cardEl => {
         cardEl.style.borderColor = '#f34079';
     });
+    document.querySelector('.campo .card-player1').innerHTML = ``;
 }
 
 let stage = new Stage(player1, player2, document.querySelector('.player1'), document.querySelector('.player2'));
