@@ -27,11 +27,13 @@ class Stage{
         });
     }
 
-    doAttack(p1, p2, cardP1, cardP2){
-        const attackProb = cardP1.attack * (Math.random() * 2);
-        const defenseProb = cardP2.defense * (Math.random() * 2);
+    doAttack(attacking, attacked, cardAttacking, cardAttacked){
+        const attackProb = cardAttacking.attack * (Math.random() * 2);
+        const defenseProb = cardAttacked.defense * (Math.random() * 2);
+        console.log("Ataque prob: ", attackProb);
+        console.log("Defense prob: ", defenseProb);
         if(attackProb > defenseProb){
-            p1.setLife(attackProb);
+            attacked.setLife(attackProb);
             this.updateLife();
             console.log("Você tirou " + attackProb.toFixed(2) + " de dano do inimigo!");
         }else{
@@ -86,6 +88,7 @@ function resetBorderDeck(){
         cardEl.style.borderColor = '#f34079';
     });
     document.querySelector('.campo .card-player1').innerHTML = ``;
+    document.querySelector('.status').style.display = `none`;
 }
 
 let stage = new Stage(player1, player2, document.querySelector('.player1'), document.querySelector('.player2'));
