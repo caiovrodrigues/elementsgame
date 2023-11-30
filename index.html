@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elements game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
 </head>
 <body>
     <div class="container">
@@ -53,9 +54,30 @@
                     <div class="status">
                         <h2></h2>
                         <div class="atributos-area">
-                            <div class="attack">Ataque: <t></t> ⚔</div>
-                            <div class="defense">Defesa: <t></t> 🛡</div>
-                            <div class="life">Vida: <t></t> 💓</div>
+                            <div class="atributos">
+                                <table>
+                                    <tr>
+                                        <td>Ataque:</td>
+                                        <td class="attack">20</td>
+                                        <td><img src="assets/images/icones/attack-icon.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Defesa:</td>
+                                        <td class="defesa">230</td>
+                                        <td><img id="defesa-icon" src="assets/images/icones/defense-icon.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Agilidade:</td>
+                                        <td class="agilidade">23</td>
+                                        <td><img id="agilidade-icon" src="assets/images/icones/agilidade-icon.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sorte:</td>
+                                        <td class="sorte">20</td>
+                                        <td><img id="sorte-icon" src="assets/images/icones/sorte-icon.png"></td>
+                                    </tr>
+                                </table>
+                                </div>
                         </div>
                     </div>
                     <div class="card-battle card-player1"></div>

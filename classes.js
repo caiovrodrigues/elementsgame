@@ -12,8 +12,8 @@ class Aqua extends Card{
     id = 1;
     attack = 17;
     defense = 10;
-    agilidade = 237;
-    sorte = 138;
+    agilidade = 149;
+    sorte = 210;
     img_url = 'assets/images/card-aqua.png';
 
     constructor(){
@@ -25,8 +25,8 @@ class Chamas extends Card{
     id = 2;
     attack = 15;
     defense = 7;
-    agilidade = 137;
-    sorte = 238;
+    agilidade = 90;
+    sorte = 68;
     img_url = 'assets/images/card-chamas.png';
 
     constructor(){
@@ -36,10 +36,10 @@ class Chamas extends Card{
 
 class Terra extends Card{
     id = 3;
-    attack = 7;
+    attack = 3333;
     defense = 13;
-    agilidade = 297;
-    sorte = 138;
+    agilidade = 87;
+    sorte = 99;
     img_url = 'assets/images/card-terra.png';
 
     constructor(){
@@ -51,8 +51,8 @@ class Ar extends Card{
     id = 4;
     attack = 14;
     defense = 10;
-    agilidade = 337;
-    sorte = 238;
+    agilidade = 37;
+    sorte = 150;
     img_url = 'assets/images/card-air.png';
 
     constructor(){

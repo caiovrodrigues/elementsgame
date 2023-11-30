@@ -19,9 +19,9 @@ class Stage{
 
         this.p2.deck.forEach(card => {
             const el = document.createElement('div');
-            el.setAttribute('class', 'card');
+            el.setAttribute('class', 'card myCards');
             el.setAttribute('data-key', card.id);
-            el.innerHTML = `<img src="${card.img_url}"/>`;
+            el.innerHTML = `<img class="background" src="assets/images/frente-carta.png"/> <img class="img-carta" src="${card.img_url}"/>`;
             el.addEventListener('click', chooseCard);
             cards.appendChild(el);
         });
@@ -35,6 +35,9 @@ class Stage{
         if(attackProb > defenseProb){
             attacked.setLife(attackProb);
             this.updateLife();
+            if(attacked.life <= 0){
+                acabouPartida();
+            }
             console.log("Você tirou " + attackProb.toFixed(2) + " de dano do inimigo!");
         }else{
             console.log("Seu ataque foi bloqueado pelo inimigo!");
@@ -78,9 +81,10 @@ function chooseCard(e){
 
     statusCarta.style.display = 'flex';
     statusCarta.querySelector('h2').innerHTML = `${carta.name}`;
-    statusCarta.querySelector('.attack t').innerHTML = `${carta.attack}`;
-    statusCarta.querySelector('.defense t').innerHTML = `${carta.defense}`;
-    statusCarta.querySelector('.life t').innerHTML = `${player2.life}`;
+    statusCarta.querySelector('.attack').innerHTML = `${carta.attack}`;
+    statusCarta.querySelector('.defesa').innerHTML = `${carta.defense}`;
+    statusCarta.querySelector('.agilidade').innerHTML = `${carta.agilidade}`;
+    statusCarta.querySelector('.sorte').innerHTML = `${carta.sorte}`;
 }
 
 function resetBorderDeck(){
@@ -94,3 +98,8 @@ function resetBorderDeck(){
 let stage = new Stage(player1, player2, document.querySelector('.player1'), document.querySelector('.player2'));
 
 stage.start();
+
+
+function acabouPartida(){
+    
+}
