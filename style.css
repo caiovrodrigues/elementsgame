@@ -23,7 +23,7 @@ body{
 .tela{
     width: 1100px;
     height: 900px;
-    border: 1px solid black;
+    border: 1px solid transparent;
     position: relative;
 }
 
@@ -131,7 +131,7 @@ body{
     width: 25px;
 }
 
-table{
+.table-campo{
     width: 100%;
     padding: 0 1rem 0 1rem ;
     border-spacing: 0 13px;
@@ -387,7 +387,6 @@ tr td:first-child{
     background-color: rgba(247, 247, 247, 0.815);
     background-image: url('assets/images/fundo-game.jpg');
     background-size: cover;
-    background-blend-mode: color-burn;
 }
 
 .info-area-menu{
@@ -409,7 +408,7 @@ tr td:first-child{
     font-family: Binggo-Wood;
     font-size: 6rem;
     text-align: center;
-    color: #1b1b1b;
+    color: #131613;
 }
 
 .titles-area img{
@@ -432,4 +431,76 @@ tr td:first-child{
     right: 30px;
     width: 70px;
     cursor: pointer;
+}
+
+/* TELA DE CADASTRO DE PERSONAGEM */
+
+.criar-cadastro-tela{
+    position: absolute;
+    inset: 0;
+    background-color: #131613;
+}
+
+.cadastro-area-total{
+    width: fit-content;
+    margin: auto;
+    margin-top: 250px;
+    color: #F8F8F8;
+    background-color: #8C6845;
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.cadastro-area-total h1{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.cadastro-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-cadastro tr td{
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+.table-cadastro input{
+    width: 100%;
+    outline: 0;
+    padding: .2rem 0;
+    font-size: .8rem;
+}
+
+.cadastro-area button{
+    margin-top: .5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.foto-player{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 3px solid black;
+    padding: 5px;
+}
+.foto-player img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-player1{
+    left: -250px;
+
+}
+.foto-player2{
+    right: -250px;
+    top: 50%;
 }

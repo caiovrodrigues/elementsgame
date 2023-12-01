@@ -8,6 +8,9 @@ class Stage{
     }
 
     start(){
+        gameArea.style.display = 'flex';
+        document.querySelector('.foto-player1 img').src = `${this.p2.foto}`;
+        document.querySelector('.foto-player2 img').src = `${this.p1.foto}`;
         this.updateLife();
 
         const cards = this.p2El.querySelector('.cards');
@@ -25,6 +28,8 @@ class Stage{
             el.addEventListener('click', chooseCard);
             cards.appendChild(el);
         });
+
+        document.querySelector('.criar-cadastro-tela').style.display = 'none';
     }
 
     doAttack(attacking, attacked, cardAttacking, cardAttacked){
@@ -34,14 +39,40 @@ class Stage{
         console.log("Defense prob: ", defenseProb);
         if(attackProb > defenseProb){
             attacked.setLife(attackProb);
-            this.updateLife();
+            setTimeout(() => {
+                this.updateLife();
+            }, 5800);
             if(attacked.life <= 0){
                 acabouPartida();
             }
-            console.log("Você tirou " + attackProb.toFixed(2) + " de dano do inimigo!");
-        }else{
-            console.log("Seu ataque foi bloqueado pelo inimigo!");
+            return {
+                attackProb: attackProb.toFixed(2),
+                defenseProb: defenseProb.toFixed(2),
+                mensagem: "Você tirou " + attackProb.toFixed(2) + " de dano do inimigo!"
+                };
         }
+        return {
+            attackProb: attackProb.toFixed(2),
+            defenseProb: defenseProb.toFixed(2),
+            mensagem: "Seu ataque foi bloqueado pelo inimigo!"
+            };
+        }
+
+    doAttackInimigo(attacking, attacked, attackProb, defenseProb){
+        console.log("INIMIGO: Ataque prob: ", attackProb);
+        console.log("VOCÊ: Defense prob: ", defenseProb);
+        setTimeout(() => {
+        if(attackProb > defenseProb){
+            attacked.setLife(attackProb);
+            alert(`Ataque Inimigo Prob: ${attackProb.toFixed(2)}\nDefesa Aliada Prob: ${defenseProb.toFixed(2)}\nVocê sofreu ${attackProb.toFixed(2)} de dano do inimigo!`);
+            this.updateLife();
+            if(attacked.life <= 0){
+                acabouPartida(attacking, attacked);
+            }
+        }else{
+            alert(`Ataque Inimigo Prob: ${attackProb.toFixed(2)}\nDefesa Aliada Prob: ${defenseProb.toFixed(2)}\nVocê se defendeu do ataque inimigo`);
+            this.updateLife();
+        }}, 3000);
     }
 
     updateLife(){
@@ -74,7 +105,7 @@ function chooseCard(e){
     resetBorderDeck();
     idCardEscolhida = e.currentTarget.getAttribute('data-key');
     e.currentTarget.style.borderColor = 'white';
-    const carta = player2.deck.find(carta => carta.id == idCardEscolhida);
+    const carta = stage.p2.deck.find(carta => carta.id == idCardEscolhida);
     const statusCarta = document.querySelector('.status');
 
     document.querySelector('.campo .card-player1').innerHTML = `<img src='${carta.img_url}'/>`;
@@ -95,11 +126,21 @@ function resetBorderDeck(){
     document.querySelector('.status').style.display = `none`;
 }
 
-let stage = new Stage(player1, player2, document.querySelector('.player1'), document.querySelector('.player2'));
+function comecarPartida(nome, fotoUrl){
+    stage = criarStage(nome, fotoUrl);
+    stage.p1.deck.push(new Chamas());
+    stage.p1.deck.push(new Ar());
+    stage.p1.deck.push(new Terra());
+    stage.p1.deck.push(new Terra());
+    stage.start();
+}
 
-stage.start();
+function criarStage(nome, fotoUrl){
+    return new Stage(new Player('Monstro', 120, 'assets/images/foto-inimigo.jpg'), new Player(nome, 100, fotoUrl), document.querySelector('.player1'), document.querySelector('.player2'));
+}
 
+let stage = null;
 
-function acabouPartida(){
-    
+function acabouPartida(vencedor, perdedor){
+    alert(`PARABÉNS ${vencedor.name} venceu a partida!\nRecebeu 20 moedas, vá melhorar suas cartas`);
 }

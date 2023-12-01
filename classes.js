@@ -10,10 +10,10 @@ class Card{
 
 class Aqua extends Card{
     id = 1;
-    attack = 17;
-    defense = 10;
-    agilidade = 149;
-    sorte = 210;
+    attack = 24;
+    defense = 8;
+    agilidade = 49;
+    sorte = 99;
     img_url = 'assets/images/card-aqua.png';
 
     constructor(){
@@ -23,7 +23,7 @@ class Aqua extends Card{
 
 class Chamas extends Card{
     id = 2;
-    attack = 15;
+    attack = 23;
     defense = 7;
     agilidade = 90;
     sorte = 68;
@@ -36,10 +36,10 @@ class Chamas extends Card{
 
 class Terra extends Card{
     id = 3;
-    attack = 3333;
-    defense = 13;
+    attack = 4;
+    defense = 15;
     agilidade = 87;
-    sorte = 99;
+    sorte = 78;
     img_url = 'assets/images/card-terra.png';
 
     constructor(){
@@ -52,7 +52,7 @@ class Ar extends Card{
     attack = 14;
     defense = 10;
     agilidade = 37;
-    sorte = 150;
+    sorte = 85;
     img_url = 'assets/images/card-air.png';
 
     constructor(){
@@ -64,16 +64,45 @@ class Player{
     name = "";
     life = 1;
     maxLife = 1;
+    foto = '';
 
     deck = [];
 
-    constructor(name, life){
+    constructor(name, life, fotoUrl){
         this.name = name;
         this.life = life;
         this.maxLife = life;
+        this.foto = fotoUrl;
     }
 
     setLife(newLife){
         this.life = this.life <= 0 ? 0 : this.life - newLife;
     }
+
+    setFoto(foto){
+        this.foto = foto;
+    }
 }
+
+const retornaCards = [
+    {
+        card: (() => {
+            return new Aqua();
+        })
+    },
+    {
+        card: (() => {
+            return new Chamas();
+        })
+    },
+    {
+        card: (() => {
+            return new Terra();
+        })
+    },
+    {
+        card: (() => {
+            return new Ar();
+        })
+    }
+]

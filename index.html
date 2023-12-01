@@ -12,17 +12,17 @@
         <div class="tela">
 
             <!-- PRIMEIRA TELA ( INTRO DO GAME ) -->
-            <!-- <div class="primeira-tela">
+            <div class="primeira-tela">
                 <audio src="assets/áudios/Impact Rise Intro.mp3" id="intro"></audio>
                 <img src="assets/images/logo.png" alt="">
                 <div class="text-banner">
                     <h1>Elements Game</h1>
                     <p>CARD GAMES</p>
                 </div>
-            </div> -->
+            </div> 
 
             <!-- MENU DO JOGO ( MENU ) -->
-            <!-- <div class="tela-inicio" style="display: none;">
+             <div class="tela-inicio" style="display: none;">
                 <img class="loja-icon" src="assets/images/icones/loja-icon.png" alt="">
                 <div class="info-area-menu">
                     <div class="titles-area">
@@ -36,11 +36,36 @@
                         <div class="item">Sair</div>
                     </div>
                 </div>
-            </div> -->
+            </div> 
+
+            <div class="criar-cadastro-tela" style="display: none;">
+                <div class="cadastro-area-total">
+                    <h1>Quem é você?</h1>
+                    <div class="cadastro-area">
+                        <table class="table-cadastro">
+                            <tr>
+                                <td>Nome:</td>
+                                <td><input type="text" class="nomeInput"></td>
+                            </tr>
+                            <tr>
+                                <td>Foto:</td>
+                                <td><input type="file" class="file"></td>
+                            </tr>
+                        </table>
+                        <button class="jogarBtn">JOGAR</button>
+                    </div>
+                </div>
+            </div>
 
             <!-- TELA DO JOGO -->
 
-            <div class="game-area">
+            <div class="game-area" style="display: none;">
+                <div class="foto-player foto-player1">
+                    <img src="assets/images/favicon.png" alt="">
+                </div>
+                <div class="foto-player foto-player2">
+                    <img src="assets/images/favicon.png" alt="">
+                </div>
                 <div class="player-area player1">
                     <div class="info-area">
                         <div class="side left-side"></div>
@@ -72,7 +97,7 @@
                         <h2></h2>
                         <div class="atributos-area">
                             <div class="atributos">
-                                <table>
+                                <table class="table-campo">
                                     <tr>
                                         <td>Ataque:</td>
                                         <td class="attack">20</td>
@@ -160,13 +185,13 @@
                                     <h1>Você tirou 21 de dano do inimigo.</h1>
                                     <div class="players">
                                         <div class="player">
-                                            Player 1
-                                            <p>17.44</p>
+                                            <span class="nomeAttack">Player 1</span>
+                                            <p class="attackProb">17.44</p>
                                         </div>
                                         ❌
                                         <div class="player">
-                                            Player 2
-                                            <p>17.44</p>
+                                            <span class="nomeDefesa">Player 2</span>
+                                            <p class="defenseProb">17.44</p>
                                         </div>
                                     </div>
                                 </div>
@@ -181,19 +206,19 @@
                                 <div class="stars">⭐⭐⭐⭐</div>
                                 <div class="atributo">
                                     <p>ATAQUE: </p>
-                                    <p>1900 </p>
+                                    <p class="attack"></p>
                                 </div>
                                 <div class="atributo">
                                     <p>DEFESA: </p>
-                                    <p>1138 </p>
+                                    <p class="defense"></p>
                                 </div>
                                 <div class="atributo">
                                     <p>AGILIDADE: </p>
-                                    <p>258</p>
+                                    <p class="agilidade"></p>
                                 </div>
                                 <div class="atributo">
                                     <p>SORTE: </p>
-                                    <p>975</p>
+                                    <p class="sorte"></p>
                                 </div>
                                 <div class="atributo">
                                     <img src="assets/images/habilidades/B-1.jpg" alt="">
@@ -207,9 +232,9 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
     <script src="classes.js"></script>
     <script src="classesPlayer.js"></script>
     <script src="stage.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
